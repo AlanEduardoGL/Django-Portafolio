@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core import views  # Importamos funciones views.py de core.
+from core import views  # Importamos funciones views.py de "core".
 
 urlpatterns = [
-    path('', views.home, name='home'),  # Importamos la función home.
-    path('about/', views.about, name='about'),  # Importamos la función about.
+    path('', views.home, name='home'),  # Importamos la función/vista "home".
+    path('about/', views.about, name='about'),  # Importamos la función/vista "about".
+    path('portafolio/', views.portafolio, name='portafolio'),  # Importamos la funcion/vista "portafolio"
+    path('contact/', views.contact, name='contact'),  # Importamos la funcion/vista "contact"
     path('admin/', admin.site.urls),
 ]

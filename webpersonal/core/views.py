@@ -1,16 +1,7 @@
 from django.shortcuts import (
-    render,
+    render,  # Permite renderizar plantillas Html.
     HttpResponse  # Nos permite responser una petición, devolviendo un código.
 )
-
-
-base_html = """
-    <h1>Mi Web Personal</h1>
-    <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/about/">Acerca de</a></li>
-    </ul>
-"""
 
 
 def home(request):
@@ -25,9 +16,9 @@ def home(request):
         HttpResponse: Variables que contienen
         elementos HTML.
     """
-    contenido_html = "<h2>Contenido Inicial</h2>"
+    contenido_html = "Contenido Principal."
 
-    return HttpResponse(base_html + contenido_html)
+    return render(request, 'core/home.html', {'contenido_html': contenido_html})
 
 
 def about(request):
@@ -42,9 +33,40 @@ def about(request):
         HttpResponse: Variables que contienen
         elementos HTML.
     """
-    acerca_de_html = "<h1>Acerca de mi</h1>"
-    contenido_html = "<p>Soy un programador.</p>"
+    contenido_html = 'Soy un programador.'
 
-    contenido_html = acerca_de_html + contenido_html
+    return render(request, 'core/about.html', {'contenido_html': contenido_html})
 
-    return HttpResponse(base_html + contenido_html)
+
+def portafolio(request):
+    """
+    Vista que muestra elementos HTML.
+
+    Args:
+        request (_type_): La vista recibe 
+        petpeticiones/metodos GET, POST, PUT, etc.
+
+    Returns:
+        HttpResponse: Variables que contienen
+        elementos HTML.
+    """
+    contenido_html = 'Contenido Portafolio.'
+
+    return render(request, 'core/portafolio.html', {'contenido_html': contenido_html})
+
+
+def contact(request):
+    """
+    Vista que muestra elementos HTML.
+
+    Args:
+        request (_type_): La vista recibe 
+        petpeticiones/metodos GET, POST, PUT, etc.
+
+    Returns:
+        HttpResponse: Variables que contienen
+        elementos HTML.
+    """
+    contenido_html = 'Vista de Contacto.'
+
+    return render(request, 'core/contact.html', {'contenido_html': contenido_html})

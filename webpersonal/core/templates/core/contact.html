@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Contacto
+{% endblock %}
+
+{% block content %}
+  {% if contenido_html %}
+    <h2>{{ contenido_html }}</h2>
+  {% else %}
+    <h2>Sin Contenido que Mostrar.</h2>
+  {% endif %}
+{% endblock %}
