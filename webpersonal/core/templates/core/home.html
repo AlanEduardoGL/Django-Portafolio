@@ -4,10 +4,14 @@
   Contenido Principal
 {% endblock %}
 
+<!-- Cargamos Archivos Statics -->
+{% block background %}{% load static %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+  <h1>Alan Guerrero</h1>
+  <span class="subheading">Desarrollador Web</span>
+{% endblock %}
+
 {% block content %}
-  {% if contenido_html %}
-    <h2>{{ contenido_html }}</h2>
-  {% else %}
-    <h2>Sin Contenido que Mostrar.</h2>
-  {% endif %}
+
 {% endblock %}
