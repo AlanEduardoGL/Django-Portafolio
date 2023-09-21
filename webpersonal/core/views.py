@@ -38,23 +38,6 @@ def about(request):
     return render(request, 'core/about.html', {'contenido_html': contenido_html})
 
 
-def portafolio(request):
-    """
-    Vista que muestra elementos HTML.
-
-    Args:
-        request (_type_): La vista recibe 
-        petpeticiones/metodos GET, POST, PUT, etc.
-
-    Returns:
-        HttpResponse: Variables que contienen
-        elementos HTML.
-    """
-    contenido_html = 'Contenido Portafolio.'
-
-    return render(request, 'core/portafolio.html', {'contenido_html': contenido_html})
-
-
 def contact(request):
     """
     Vista que muestra elementos HTML.

@@ -16,12 +16,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core import views  # Importamos funciones views.py de "core".
+from core import views as core_views  # Importamos funciones views.py de "core".
+from portfolio import views as portfolio_views # Importamos funciones views.py de "portfolio".
+from django.conf import settings
 
 urlpatterns = [
-    path('', views.home, name='home'),  # Importamos la función/vista "home".
-    path('about/', views.about, name='about'),  # Importamos la función/vista "about".
-    path('portafolio/', views.portafolio, name='portafolio'),  # Importamos la funcion/vista "portafolio"
-    path('contact/', views.contact, name='contact'),  # Importamos la funcion/vista "contact"
+    path('', core_views.home, name='home'),  # Importamos la función/vista "home".
+    # Importamos la función/vista "about".
+    path('about/', core_views.about, name='about'),
+    # Importamos la funcion/vista "portafolio"
+    path('portafolio/', portfolio_views.portafolio, name='portafolio'),
+    # Importamos la funcion/vista "contact"
+    path('contact/', core_views.contact, name='contact'),
     path('admin/', admin.site.urls),
 ]
+
+# Configuracion para que pueda abrir los ficheros de "media".
+# Solo funcinoa con el DEBUG activo.
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    )
