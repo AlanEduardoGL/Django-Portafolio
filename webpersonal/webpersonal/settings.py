@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',  # Registramos nuestra app "core".
+    'portfolio', # Registramos nuuestra app "portfolio".
 ]
 
 MIDDLEWARE = [
