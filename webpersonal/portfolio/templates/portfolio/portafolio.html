@@ -23,7 +23,7 @@
         <p>{{ proyect.description }}</p>
         {% if proyect.link %}
         <p>
-          <a href="{{ proyect.link }}">Más información</a>
+          <a href="{% url 'portfolio_description' id=proyect.id %}">Más información</a>
         </p>
         {% endif %}
       </div>

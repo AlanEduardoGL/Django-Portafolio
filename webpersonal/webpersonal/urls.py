@@ -24,10 +24,12 @@ urlpatterns = [
     path('', core_views.home, name='home'),  # Importamos la función/vista "home".
     # Importamos la función/vista "about".
     path('about/', core_views.about, name='about'),
-    # Importamos la funcion/vista "portafolio"
-    path('portafolio/', portfolio_views.portafolio, name='portafolio'),
     # Importamos la funcion/vista "contact"
     path('contact/', core_views.contact, name='contact'),
+    # Importamos la funcion/vista "portafolio"
+    path('portafolio/', portfolio_views.portafolio, name='portafolio'),
+    # Importamos la funcion/vista "portfolio_description" y colocando el id que se recibira como parametro.
+    path('portfolio_description/<int:id>/', portfolio_views.portfolio_description, name='portfolio_description'),
     path('admin/', admin.site.urls),
 ]
 

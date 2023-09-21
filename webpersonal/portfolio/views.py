@@ -20,3 +20,10 @@ def portafolio(request):
     proyects = Proyect.objects.all()
 
     return render(request, 'portfolio/portafolio.html', {'proyects':proyects})
+
+
+def portfolio_description(request, id):
+    
+    proyect = Proyect.objects.filter(id=id).first()
+
+    return render(request, 'portfolio/portfolio_description.html', {'proyect':proyect})
